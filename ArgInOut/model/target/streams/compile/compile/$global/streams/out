@@ -1,0 +1,10 @@
+[0m[[0m[33mwarn[0m] [0m[0m/local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/AppSensitivity.scala:5:16: overriding method main in trait App is deprecated (since 2.11.0): main should not be overridden[0m
+[0m[[0m[33mwarn[0m] [0m[0m  override def main(args: Array[String]): Unit = {[0m
+[0m[[0m[33mwarn[0m] [0m[0m               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/model_dse.scala:10:16: overriding method main in trait App is deprecated (since 2.11.0): main should not be overridden[0m
+[0m[[0m[33mwarn[0m] [0m[0m  override def main(args: Array[String]): Unit = {[0m
+[0m[[0m[33mwarn[0m] [0m[0m               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/model_final.scala:10:16: overriding method main in trait App is deprecated (since 2.11.0): main should not be overridden[0m
+[0m[[0m[33mwarn[0m] [0m[0m  override def main(args: Array[String]): Unit = {[0m
+[0m[[0m[33mwarn[0m] [0m[0m               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthree warnings found[0m

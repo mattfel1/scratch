@@ -1,0 +1,25 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/target/scala-2.12/runtimemodel_2.12-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	model[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/target/scala-2.12/classes/model[0m
+[0m[[0m[0mdebug[0m] [0m[0m	model/AskMap$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/target/scala-2.12/classes/model/AskMap$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	model/PreviousAskMap.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/target/scala-2.12/classes/model/PreviousAskMap.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	model/AppRuntimeModel_dse.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/target/scala-2.12/classes/model/AppRuntimeModel_dse.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	model/AppRuntimeModel_final$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/target/scala-2.12/classes/model/AppRuntimeModel_final$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	model/AskMap.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/target/scala-2.12/classes/model/AskMap.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	model/AppSensitivity.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/target/scala-2.12/classes/model/AppSensitivity.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	model/PreviousAskMap$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/target/scala-2.12/classes/model/PreviousAskMap$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	model/AppSensitivity$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/target/scala-2.12/classes/model/AppSensitivity$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	model/AppRuntimeModel_dse$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/target/scala-2.12/classes/model/AppRuntimeModel_dse$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	model/AppRuntimeModel_final.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /local/ssd/home/mattfel/sp_fixes/spatial/gen/VCS/ArgInOut/model/target/scala-2.12/classes/model/AppRuntimeModel_final.class[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m

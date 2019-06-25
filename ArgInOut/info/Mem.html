@@ -1,0 +1,141 @@
+<h3 id=x32><a href=IR.html#x32>x32</a> = ArgInNew(init=0)</h3>
+<text><strong>Name</strong>: x<br></text>
+<text><strong>SrcCtx</strong>: ArgInOut.scala:10:18<br></text>
+<text><strong>Type</strong>: Reg[Fix[TRUE,_32,_0]]<br></text>
+<text><strong>Aliases</strong>: 0033: x1<br></text>
+<text><strong>Writers</strong>: [<a href=IR.html#x36>x36</a>]<br></text>
+<text><strong>Readers</strong>: [<a href=IR.html#x37>x37</a>]<br></text>
+<text><strong>Consumers</strong>: [<a href=IR.html#x36>x36</a>, <a href=IR.html#x37>x37</a>]<br></text>
+<text><strong>Duplicates</strong><br></text>
+<ul style=list-style-type:disc>
+<li>
+<text><strong>banking</strong><br></text>
+<ul style=list-style-type:none>
+<li>Dims {}: Cyclic: N=1, B=1, alpha=<>, P=<></li>
+</ul>
+<text><strong>depth</strong>: 1<br></text>
+<text><strong>padding</strong>: []<br></text>
+<text><strong>darkVolume</strong>: 0<br></text>
+<text><strong>accType</strong>: None()<br></text>
+</li>
+</ul>
+<text><strong>ShallowAliases</strong>: [<a href=IR.html#x32>x32</a>]<br></text>
+<text><strong>ReadUses</strong>: []<br></text>
+<text><strong>DeepAliases</strong>: []<br></text>
+<text><strong>Effects</strong>: Mutable<br></text>
+<table border=3 cellpadding=10 cellspacing=10>
+<tbody>
+<tr>
+<th>writers(1)</th>
+<td>
+<h3 id=x36><a href=IR.html#x36>x36</a> = SetReg(mem=<a href=IR.html#x32>x32</a>,data=<a href=IR.html#x35>x35</a>)</h3>
+<text><strong>SrcCtx</strong>: ArgInOut.scala:15:11<br></text>
+<text><strong>Type</strong>: Void<br></text>
+<text><strong>GroupId</strong>: {[]:[0]}<br></text>
+<text><strong>SegmentMapping</strong>: {0:0}<br></text>
+<text><strong>Ports</strong>: {0:{[]:Port(bufferPort=Some(0),muxPort=0,muxOfs=0,castgroup=[0],broadcast=[0])}}<br></text>
+<text><strong>Dispatch</strong>: {[]:[0]}<br></text>
+<text><strong>ShallowAliases</strong>: [<a href=IR.html#x36>x36</a>]<br></text>
+<text><strong>ReadUses</strong>: []<br></text>
+<text><strong>DeepAliases</strong>: []<br></text>
+<text><strong>Effects</strong>: (reads={x32}, writes={x32})<br></text>
+</td>
+</tr>
+</tbody>
+</table>
+<table border=3 cellpadding=10 cellspacing=10>
+<tbody>
+<tr>
+<th>readers(1)</th>
+<td>
+<h3 id=x37><a href=IR.html#x37>x37</a> = RegRead(mem=<a href=IR.html#x32>x32</a>)</h3>
+<text><strong>SrcCtx</strong>: ArgInOut.scala:19:10<br></text>
+<text><strong>Type</strong>: Fix[TRUE,_32,_0]<br></text>
+<text><strong>ScopeCtrl</strong>: Scope(s=Some(<a href=IR.html#x9>x9</a>), stage=0, block=0)<br></text>
+<text><strong>GroupId</strong>: {[]:[0]}<br></text>
+<text><strong>SegmentMapping</strong>: {0:0}<br></text>
+<text><strong>Ports</strong>: {0:{[]:Port(bufferPort=Some(0),muxPort=0,muxOfs=0,castgroup=[0],broadcast=[0])}}<br></text>
+<text><strong>ParentCtrl</strong>: Ctrl(s=Some(<a href=IR.html#x9>x9</a>), stage=-1)<br></text>
+<text><strong>Consumers</strong>: [<a href=IR.html#x38>x38</a>, <a href=IR.html#x9>x9</a>]<br></text>
+<text><strong>Dispatch</strong>: {[]:[0]}<br></text>
+<text><strong>ShallowAliases</strong>: [<a href=IR.html#x37>x37</a>]<br></text>
+<text><strong>DefiningBlk</strong>: Blk(s=Some(<a href=IR.html#x9>x9</a>), block=0)<br></text>
+<text><strong>FullDelay</strong>: 0.0<br></text>
+<text><strong>ReadUses</strong>: [<a href=IR.html#x37>x37</a>]<br></text>
+<text><strong>Effects</strong>: (unique=true, reads={x32})<br></text>
+<text><strong>DeepAliases</strong>: []<br></text>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id=x33><a href=IR.html#x33>x33</a> = ArgOutNew(init=0)</h3>
+<text><strong>Name</strong>: y<br></text>
+<text><strong>SrcCtx</strong>: ArgInOut.scala:11:19<br></text>
+<text><strong>Type</strong>: Reg[Fix[TRUE,_32,_0]]<br></text>
+<text><strong>Aliases</strong>: 0033: x2<br></text>
+<text><strong>Writers</strong>: [<a href=IR.html#x39>x39</a>]<br></text>
+<text><strong>Readers</strong>: [<a href=IR.html#x40>x40</a>]<br></text>
+<text><strong>Consumers</strong>: [<a href=IR.html#x39>x39</a>, <a href=IR.html#x40>x40</a>]<br></text>
+<text><strong>Duplicates</strong><br></text>
+<ul style=list-style-type:disc>
+<li>
+<text><strong>banking</strong><br></text>
+<ul style=list-style-type:none>
+<li>Dims {}: Cyclic: N=1, B=1, alpha=<>, P=<></li>
+</ul>
+<text><strong>depth</strong>: 1<br></text>
+<text><strong>padding</strong>: []<br></text>
+<text><strong>darkVolume</strong>: 0<br></text>
+<text><strong>accType</strong>: None()<br></text>
+</li>
+</ul>
+<text><strong>ShallowAliases</strong>: [<a href=IR.html#x33>x33</a>]<br></text>
+<text><strong>ReadUses</strong>: []<br></text>
+<text><strong>DeepAliases</strong>: []<br></text>
+<text><strong>Effects</strong>: Mutable<br></text>
+<table border=3 cellpadding=10 cellspacing=10>
+<tbody>
+<tr>
+<th>writers(1)</th>
+<td>
+<h3 id=x39><a href=IR.html#x39>x39</a> = RegWrite(mem=<a href=IR.html#x33>x33</a>,data=<a href=IR.html#x38>x38</a>,ens=[])</h3>
+<text><strong>SrcCtx</strong>: ArgInOut.scala:19:8<br></text>
+<text><strong>Type</strong>: Void<br></text>
+<text><strong>ScopeCtrl</strong>: Scope(s=Some(<a href=IR.html#x9>x9</a>), stage=0, block=0)<br></text>
+<text><strong>GroupId</strong>: {[]:[0]}<br></text>
+<text><strong>SegmentMapping</strong>: {0:0}<br></text>
+<text><strong>Ports</strong>: {0:{[]:Port(bufferPort=Some(0),muxPort=0,muxOfs=0,castgroup=[0],broadcast=[0])}}<br></text>
+<text><strong>ParentCtrl</strong>: Ctrl(s=Some(<a href=IR.html#x9>x9</a>), stage=-1)<br></text>
+<text><strong>Consumers</strong>: [<a href=IR.html#x9>x9</a>]<br></text>
+<text><strong>Dispatch</strong>: {[]:[0]}<br></text>
+<text><strong>ShallowAliases</strong>: [<a href=IR.html#x39>x39</a>]<br></text>
+<text><strong>DefiningBlk</strong>: Blk(s=Some(<a href=IR.html#x9>x9</a>), block=0)<br></text>
+<text><strong>FullDelay</strong>: 1.0<br></text>
+<text><strong>ReadUses</strong>: [<a href=IR.html#x37>x37</a>]<br></text>
+<text><strong>Effects</strong>: (reads={x33}, writes={x33})<br></text>
+<text><strong>DeepAliases</strong>: []<br></text>
+</td>
+</tr>
+</tbody>
+</table>
+<table border=3 cellpadding=10 cellspacing=10>
+<tbody>
+<tr>
+<th>readers(1)</th>
+<td>
+<h3 id=x40><a href=IR.html#x40>x40</a> = GetReg(mem=<a href=IR.html#x33>x33</a>)</h3>
+<text><strong>SrcCtx</strong>: ArgInOut.scala:22:24<br></text>
+<text><strong>Type</strong>: Fix[TRUE,_32,_0]<br></text>
+<text><strong>GroupId</strong>: {[]:[1]}<br></text>
+<text><strong>SegmentMapping</strong>: {0:0}<br></text>
+<text><strong>Ports</strong>: {0:{[]:Port(bufferPort=Some(0),muxPort=0,muxOfs=0,castgroup=[0],broadcast=[0])}}<br></text>
+<text><strong>Consumers</strong>: [<a href=IR.html#x46>x46</a>, <a href=IR.html#x50>x50</a>]<br></text>
+<text><strong>Dispatch</strong>: {[]:[0]}<br></text>
+<text><strong>ShallowAliases</strong>: [<a href=IR.html#x40>x40</a>]<br></text>
+<text><strong>ReadUses</strong>: [<a href=IR.html#x40>x40</a>]<br></text>
+<text><strong>DeepAliases</strong>: []<br></text>
+<text><strong>Effects</strong>: (reads={x33})<br></text>
+</td>
+</tr>
+</tbody>
+</table>
