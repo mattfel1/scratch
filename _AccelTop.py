@@ -35,13 +35,15 @@ class AccelTop(pr.Device):
 
 
 ##### ArgIns
-        self.add(pr.RemoteVariable(name = 'X_arg', description = 'argIn', offset = 0, bitSize = 32, bitOffset = 0, mode = 'RW',))
+        self.add(pr.RemoteVariable(name = 'X_arg', description = 'argIn', offset = 8, bitSize = 32, bitOffset = 0, mode = 'RW',))
 
 ##### DRAM Ptrs:
 
 ##### ArgIOs
 
 ##### ArgOuts
-        self.add(pr.RemoteVariable(name = 'Y_arg', description = 'argIn', offset = 4, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'Y_arg', description = 'argIn', offset = 12, bitSize = 32, bitOffset = 0, mode = 'RO',))
 
-// Instrumentation Counters
+##### Instrumentation Counters
+
+##### Early Exits
