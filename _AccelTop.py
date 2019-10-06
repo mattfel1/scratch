@@ -8,7 +8,7 @@ class AccelTop(pr.Device):
             **kwargs):
         super().__init__(name=name, description=description, **kwargs)
         self.add(pr.RemoteVariable(
-            name         = 'Enabled',
+            name         = 'Enable',
             description  = 'Enable signal for App',
             offset       =  0x000,
             bitSize      =  1,
@@ -45,5 +45,11 @@ class AccelTop(pr.Device):
         self.add(pr.RemoteVariable(name = 'Y_arg', description = 'argIn', offset = 12, bitSize = 32, bitOffset = 0, mode = 'RO',))
 
 ##### Instrumentation Counters
+        self.add(pr.RemoteVariable(name = 'X17_cycles_arg', description = 'cycs', offset = 16, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'X17_iters_arg', description = 'numiters', offset = 20, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'X53_cycles_arg', description = 'cycs', offset = 16, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'X53_iters_arg', description = 'numiters', offset = 20, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'X57_cycles_arg', description = 'cycs', offset = 16, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'X57_iters_arg', description = 'numiters', offset = 20, bitSize = 32, bitOffset = 0, mode = 'RO',))
 
 ##### Early Exits
