@@ -33,7 +33,7 @@ def execute(base, cliargs):
   set this IN_ptr
   c1->setArg(IN_ptr, x254, false);
   print("Allocate mem of size 16 at %p\n" % x254_ptr);
-  * x271 = new (16);
+  x271 = [None for _ in range(16)]
   for b18 in range(0,16):
     x271[b18] = b18
   
