@@ -29,12 +29,12 @@ def execute(base, cliargs):
   time.sleep(0.01)
   accel.Reset.set(0)
   print("Starting TopHost.py...")
-  x44 = cliargs;
-  x45 = 0;
-  x47 = x44[0]
-  x48 = int(x47)
-  accel.X_arg.set(x48)
-  print("Wrote %d to x45!" % x48)
+  x34 = cliargs;
+  x35 = 0;
+  x37 = x34[0]
+  x38 = int(x37)
+  accel.X_arg.set(x38)
+  print("Wrote %d to x35!" % x38)
   time.sleep(0.001)
   done = accel.Done.get()
   ctr = 0
@@ -46,18 +46,23 @@ def execute(base, cliargs):
     if (ctr % 500 == 0): print("  Polled flag %d times..." % ctr)
   
   print("Finished executing TopHost.py!")
-  x71 = accel.Y_arg.get()
+  x43 = accel.Y_arg.get()
   time.sleep(0.001)
-  x72 = x48 + 8191;
-  x73 = str(x72)
-  x74 = (str("expected: ") + x73);
-  x75 = (x74 + str("\n"));
-  print(x75)
-  x77 = str(x71)
-  x78 = (str("result: ") + x77);
-  x79 = (x78 + str("\n"));
-  print(x79)
-  x81 = x72 == x71;
-  x82 = ("\n=================\n" + (str("SRAM2D.scala:28:11: Assertion failure") + "\n=================\n"));
-  if (true): assert(x81), "%s" % x82
+  x44 = x38 + 4;
+  x45 = str(x44)
+  x46 = (str("expected: ") + x45);
+  x47 = (x46 + str("\n"));
+  print(x47)
+  x49 = str(x43)
+  x50 = (str("result: ") + x49);
+  x51 = (x50 + str("\n"));
+  print(x51)
+  x53 = x44 == x43;
+  x54 = str(x53)
+  x55 = (str("PASS: ") + x54);
+  x56 = (x55 + str(" (InOutArg)"));
+  x57 = (x56 + str("\n"));
+  print(x57)
+  x59 = ("\n=================\n" + (str("ArgInOut.scala:30:11: Assertion failure") + "\n=================\n"));
+  if (true): assert(x53), "%s" % x59
 
