@@ -14,7 +14,7 @@ import pyrogue.utilities.prbs
 import pyrogue.interfaces.simulation
 
 import axipcie  as pcie
-import rogue.axi as axi
+# import rogue.axi as axi
 
 import time
 import math
