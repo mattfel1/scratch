@@ -29,9 +29,10 @@ def execute(base, cliargs):
   time.sleep(0.01)
   accel.Reset.set(0)
   print("Starting TopHost.py...")
-  # x417 = new frame of size 8, called IN_ptr
-  x418 = [Const(34),Const(94),Const(154),Const(214),Const(274),Const(334),Const(394),Const(454)]
-  # x419 in set x417 with x418
+  x417 = base._reqFrame(8 * 0, False);
+  x418 = np.array([Const(34),Const(94),Const(154),Const(214),Const(274),Const(334),Const(394),Const(454)], dtype='uint64')
+  x417.write(x418.tobytes(),0)
+  base._sendFrame(x417)
   done = accel.Done.get()
   ctr = 0
   accel.Enable.set(1)
