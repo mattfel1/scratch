@@ -29,7 +29,9 @@ def execute(base, cliargs):
   time.sleep(0.01)
   accel.Reset.set(0)
   print("Starting TopHost.py...")
-  x77 = base.frameIn
+  x415 = base.frameIn
+  x416 = np.array([50462976,117835012,185207048,252579084,319951120,387323156,454695192,522067228], dtype='uint64')
+  base.frameIn.sendFrame(x416)
   done = accel.Done.get()
   ctr = 0
   accel.Enable.set(1)
@@ -39,114 +41,353 @@ def execute(base, cliargs):
     ctr = ctr + 1
     if (ctr % 75 == 0): print("  Polled flag %d times..." % ctr)
   
-  print("Finished executing TopHost.py for FrameStoreTest!") 
+  print("Finished executing TopHost.py for FrameLoadTest!") 
   instrumentation = open('./instrumentation.txt','w+')
-  # Need to instrument List((x20,1), (x96,2), (x107,2), (x106,3))
+  # Need to instrument List((x119,1), (x463,2), (x462,3), (x552,2))
   print('ArgIns: %d, ArgIOs: %d' % (1,2)) #( " " ,  " " ))
-   # immediate parent hashmap now Map(1 -> x20), current node x20 is at depth 1
-  x20_cycles = accel.X20_cycles_arg.get()
+   # immediate parent hashmap now Map(1 -> x119), current node x119 is at depth 1
+  x119_cycles = accel.(X119_cycles_arg.get()
   time.sleep(0.0001)
-  x20_iters = accel.X20_iters_arg.get()
+  x119_iters = accel.getArg(X119_iters_arg.get()
   time.sleep(0.0001)
-  x20_iters_per_parent = x20_iters / max(1,x20_iters)
+  x119_iters_per_parent = x119_iters / max(1,x119_iters)
   time.sleep(0.0001)
-  x20_avg = x20_cycles / max(1,x20_iters)
+  x119_avg = x119_cycles / max(1,x119_iters)
   time.sleep(0.0001)
-  print('  x20 - %d ( %d / %d ) [%d iters/parent execution]' % (x20_avg,x20_cycles,x20_iters,x20_iters_per_parent), end='')
-  #instrumentation.write('  x20 - %d ( %d / %d ) [%d iters/parent execution]' % (x20_avg,x20_cycles,x20_iters,x20_iters_per_parent), end='')
+  print('  x119 - %d ( %d / %d ) [%d iters/parent execution]' % (x119_avg,x119_cycles,x119_iters,x119_iters_per_parent), end='')
+  instrumentation.write('  x119 - %d ( %d / %d ) [%d iters/parent execution]' % (x119_avg,x119_cycles,x119_iters,x119_iters_per_parent), end='')
   print('')
   instrumentation.write('')
-   # immediate parent hashmap now Map(2 -> x96, 1 -> x20), current node x96 is at depth 2
-  x96_cycles = accel.X96_cycles_arg.get()
+   # immediate parent hashmap now Map(2 -> x463, 1 -> x119), current node x463 is at depth 2
+  x463_cycles = accel.(X463_cycles_arg.get()
   time.sleep(0.0001)
-  x96_iters = accel.X96_iters_arg.get()
+  x463_iters = accel.getArg(X463_iters_arg.get()
   time.sleep(0.0001)
-  x96_iters_per_parent = x96_iters / max(1,x20_iters)
+  x463_iters_per_parent = x463_iters / max(1,x119_iters)
   time.sleep(0.0001)
-  x96_avg = x96_cycles / max(1,x96_iters)
+  x463_avg = x463_cycles / max(1,x463_iters)
   time.sleep(0.0001)
-  print('    x96 - %d ( %d / %d ) [%d iters/parent execution]' % (x96_avg,x96_cycles,x96_iters,x96_iters_per_parent), end='')
-  #instrumentation.write('    x96 - %d ( %d / %d ) [%d iters/parent execution]' % (x96_avg,x96_cycles,x96_iters,x96_iters_per_parent), end='')
+  print('    x463 - %d ( %d / %d ) [%d iters/parent execution]' % (x463_avg,x463_cycles,x463_iters,x463_iters_per_parent), end='')
+  instrumentation.write('    x463 - %d ( %d / %d ) [%d iters/parent execution]' % (x463_avg,x463_cycles,x463_iters,x463_iters_per_parent), end='')
   print('')
   instrumentation.write('')
-   # immediate parent hashmap now Map(2 -> x107, 1 -> x20), current node x107 is at depth 2
-  x107_cycles = accel.X107_cycles_arg.get()
+   # immediate parent hashmap now Map(2 -> x463, 1 -> x119, 3 -> x462), current node x462 is at depth 3
+  x462_cycles = accel.(X462_cycles_arg.get()
   time.sleep(0.0001)
-  x107_iters = accel.X107_iters_arg.get()
+  x462_iters = accel.getArg(X462_iters_arg.get()
   time.sleep(0.0001)
-  x107_iters_per_parent = x107_iters / max(1,x20_iters)
+  x462_iters_per_parent = x462_iters / max(1,x463_iters)
   time.sleep(0.0001)
-  x107_avg = x107_cycles / max(1,x107_iters)
+  x462_avg = x462_cycles / max(1,x462_iters)
   time.sleep(0.0001)
-  print('    x107 - %d ( %d / %d ) [%d iters/parent execution]' % (x107_avg,x107_cycles,x107_iters,x107_iters_per_parent), end='')
-  #instrumentation.write('    x107 - %d ( %d / %d ) [%d iters/parent execution]' % (x107_avg,x107_cycles,x107_iters,x107_iters_per_parent), end='')
+  print('      x462 - %d ( %d / %d ) [%d iters/parent execution]' % (x462_avg,x462_cycles,x462_iters,x462_iters_per_parent), end='')
+  instrumentation.write('      x462 - %d ( %d / %d ) [%d iters/parent execution]' % (x462_avg,x462_cycles,x462_iters,x462_iters_per_parent), end='')
+  x462_stalled = accel.X462_stalled_arg.get()
+  x462_idle = accel.X462_idle_arg.get()
+  print(' <# stalled: %d, #idle: %d>' % (x462_stalled,x462_idle), end='')
+  instrumentation.write(' <# stalled: %d, #idle: %d>' % (x462_stalled,x462_idle), end='')
   print('')
   instrumentation.write('')
-   # immediate parent hashmap now Map(2 -> x107, 1 -> x20, 3 -> x106), current node x106 is at depth 3
-  x106_cycles = accel.X106_cycles_arg.get()
+   # immediate parent hashmap now Map(2 -> x552, 1 -> x119, 3 -> x462), current node x552 is at depth 2
+  x552_cycles = accel.(X552_cycles_arg.get()
   time.sleep(0.0001)
-  x106_iters = accel.X106_iters_arg.get()
+  x552_iters = accel.getArg(X552_iters_arg.get()
   time.sleep(0.0001)
-  x106_iters_per_parent = x106_iters / max(1,x107_iters)
+  x552_iters_per_parent = x552_iters / max(1,x119_iters)
   time.sleep(0.0001)
-  x106_avg = x106_cycles / max(1,x106_iters)
+  x552_avg = x552_cycles / max(1,x552_iters)
   time.sleep(0.0001)
-  print('      x106 - %d ( %d / %d ) [%d iters/parent execution]' % (x106_avg,x106_cycles,x106_iters,x106_iters_per_parent), end='')
-  #instrumentation.write('      x106 - %d ( %d / %d ) [%d iters/parent execution]' % (x106_avg,x106_cycles,x106_iters,x106_iters_per_parent), end='')
-  x106_stalled = accel.X106_stalled_arg.get()
-  x106_idle = accel.X106_idle_arg.get()
-  print(' <# stalled: %d, #idle: %d>' % (x106_stalled,x106_idle), end='')
-  #instrumentation.write(' <# stalled: %d, #idle: %d>' % (x106_stalled,x106_idle), end='')
+  print('    x552 - %d ( %d / %d ) [%d iters/parent execution]' % (x552_avg,x552_cycles,x552_iters,x552_iters_per_parent), end='')
+  instrumentation.write('    x552 - %d ( %d / %d ) [%d iters/parent execution]' % (x552_avg,x552_cycles,x552_iters,x552_iters_per_parent), end='')
   print('')
   instrumentation.write('')
   instrumentation.close();
-  x108 = np.zeros(8, dtype='uint64')
-  # x109 in get x77 to x108
-  x110 = np.array([50462976,117835012,185207048,252579084,319951120,387323156,454695192,522067228], dtype='uint64')
-  x111 = (str("Wanted:") + str("\n"));
-  print(x111)
-  x113 = len(x110)
-  for b27 in range(0,x113,1):
-    x114 = x110[b27]
-    x115 = str(x114)
-    x116 = (x115 + str(" "));
-    print(x116)
-  
-  print(str("\n"))
-  x120 = (str("Got:") + str("\n"));
-  print(x120)
-  x122 = len(x108)
-  for b37 in range(0,x122,1):
-    x123 = x108[b37]
-    x124 = str(x123)
-    x125 = (x124 + str(" "));
-    print(x125)
-  
-  print(str("\n"))
-  x132 = np.zeros(len(x108), dtype=bool)
-  for b44 in range(len(x108)):
-    x129 = x108[b44]
-    x130 = x110[b44]
-    x131 = x129 == x130;
-    x132[b44] = x131
-  
-  x134 = np.zeros(len(x132),dtype='bool')
-  for b49 in range(0,len(x132)):
-    x133 = x132[b49]
-    x134[b49] = x133
-  
-  x137 = 0
-  if (len(x134) > 0): # Hack to handle reductions on things of length 0
-    x137 = x134[0]
-  else:
-    x137 = 0
-  
-  for b52 in range(1,len(x134)):
-    b53 = x134[b52]
-    b54 = x137;
-    x136 = b53 & b54;
-    x137 = x136;
-  
-  x138 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:43:11: Assertion failure") + "\n=================\n"));
-  if (True): assert(x137), "%s" % x138
+  x553 = accel.X418_arg.get()
+  time.sleep(0.0001)
+  x554 = str(x553)
+  x555 = (str("got ") + (x554 + (str(", wanted ") + (str("0") + str("")))));
+  x556 = (x555 + str("\n"));
+  print(x556)
+  x558 = x553 == 0;
+  x559 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x558), "%s" % x559
+  x560 = accel.X419_arg.get()
+  time.sleep(0.0001)
+  x561 = str(x560)
+  x562 = (str("got ") + (x561 + (str(", wanted ") + (str("1") + str("")))));
+  x563 = (x562 + str("\n"));
+  print(x563)
+  x565 = x560 == 1;
+  x566 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x565), "%s" % x566
+  x567 = accel.X420_arg.get()
+  time.sleep(0.0001)
+  x568 = str(x567)
+  x569 = (str("got ") + (x568 + (str(", wanted ") + (str("2") + str("")))));
+  x570 = (x569 + str("\n"));
+  print(x570)
+  x572 = x567 == 2;
+  x573 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x572), "%s" % x573
+  x574 = accel.X421_arg.get()
+  time.sleep(0.0001)
+  x575 = str(x574)
+  x576 = (str("got ") + (x575 + (str(", wanted ") + (str("3") + str("")))));
+  x577 = (x576 + str("\n"));
+  print(x577)
+  x579 = x574 == 3;
+  x580 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x579), "%s" % x580
+  x581 = accel.X422_arg.get()
+  time.sleep(0.0001)
+  x582 = str(x581)
+  x583 = (str("got ") + (x582 + (str(", wanted ") + (str("4") + str("")))));
+  x584 = (x583 + str("\n"));
+  print(x584)
+  x586 = x581 == 4;
+  x587 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x586), "%s" % x587
+  x588 = accel.X423_arg.get()
+  time.sleep(0.0001)
+  x589 = str(x588)
+  x590 = (str("got ") + (x589 + (str(", wanted ") + (str("5") + str("")))));
+  x591 = (x590 + str("\n"));
+  print(x591)
+  x593 = x588 == 5;
+  x594 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x593), "%s" % x594
+  x595 = accel.X424_arg.get()
+  time.sleep(0.0001)
+  x596 = str(x595)
+  x597 = (str("got ") + (x596 + (str(", wanted ") + (str("6") + str("")))));
+  x598 = (x597 + str("\n"));
+  print(x598)
+  x600 = x595 == 6;
+  x601 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x600), "%s" % x601
+  x602 = accel.X425_arg.get()
+  time.sleep(0.0001)
+  x603 = str(x602)
+  x604 = (str("got ") + (x603 + (str(", wanted ") + (str("7") + str("")))));
+  x605 = (x604 + str("\n"));
+  print(x605)
+  x607 = x602 == 7;
+  x608 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x607), "%s" % x608
+  x609 = accel.X426_arg.get()
+  time.sleep(0.0001)
+  x610 = str(x609)
+  x611 = (str("got ") + (x610 + (str(", wanted ") + (str("8") + str("")))));
+  x612 = (x611 + str("\n"));
+  print(x612)
+  x614 = x609 == 8;
+  x615 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x614), "%s" % x615
+  x616 = accel.X427_arg.get()
+  time.sleep(0.0001)
+  x617 = str(x616)
+  x618 = (str("got ") + (x617 + (str(", wanted ") + (str("9") + str("")))));
+  x619 = (x618 + str("\n"));
+  print(x619)
+  x621 = x616 == 9;
+  x622 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x621), "%s" % x622
+  x623 = accel.X428_arg.get()
+  time.sleep(0.0001)
+  x624 = str(x623)
+  x625 = (str("got ") + (x624 + (str(", wanted ") + (str("10") + str("")))));
+  x626 = (x625 + str("\n"));
+  print(x626)
+  x628 = x623 == 10;
+  x629 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x628), "%s" % x629
+  x630 = accel.X429_arg.get()
+  time.sleep(0.0001)
+  x631 = str(x630)
+  x632 = (str("got ") + (x631 + (str(", wanted ") + (str("11") + str("")))));
+  x633 = (x632 + str("\n"));
+  print(x633)
+  x635 = x630 == 11;
+  x636 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x635), "%s" % x636
+  x637 = accel.X430_arg.get()
+  time.sleep(0.0001)
+  x638 = str(x637)
+  x639 = (str("got ") + (x638 + (str(", wanted ") + (str("12") + str("")))));
+  x640 = (x639 + str("\n"));
+  print(x640)
+  x642 = x637 == 12;
+  x643 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x642), "%s" % x643
+  x644 = accel.X431_arg.get()
+  time.sleep(0.0001)
+  x645 = str(x644)
+  x646 = (str("got ") + (x645 + (str(", wanted ") + (str("13") + str("")))));
+  x647 = (x646 + str("\n"));
+  print(x647)
+  x649 = x644 == 13;
+  x650 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x649), "%s" % x650
+  x651 = accel.X432_arg.get()
+  time.sleep(0.0001)
+  x652 = str(x651)
+  x653 = (str("got ") + (x652 + (str(", wanted ") + (str("14") + str("")))));
+  x654 = (x653 + str("\n"));
+  print(x654)
+  x656 = x651 == 14;
+  x657 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x656), "%s" % x657
+  x658 = accel.X433_arg.get()
+  time.sleep(0.0001)
+  x659 = str(x658)
+  x660 = (str("got ") + (x659 + (str(", wanted ") + (str("15") + str("")))));
+  x661 = (x660 + str("\n"));
+  print(x661)
+  x663 = x658 == 15;
+  x664 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x663), "%s" % x664
+  x665 = accel.X434_arg.get()
+  time.sleep(0.0001)
+  x666 = str(x665)
+  x667 = (str("got ") + (x666 + (str(", wanted ") + (str("16") + str("")))));
+  x668 = (x667 + str("\n"));
+  print(x668)
+  x670 = x665 == 16;
+  x671 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x670), "%s" % x671
+  x672 = accel.X435_arg.get()
+  time.sleep(0.0001)
+  x673 = str(x672)
+  x674 = (str("got ") + (x673 + (str(", wanted ") + (str("17") + str("")))));
+  x675 = (x674 + str("\n"));
+  print(x675)
+  x677 = x672 == 17;
+  x678 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x677), "%s" % x678
+  x679 = accel.X436_arg.get()
+  time.sleep(0.0001)
+  x680 = str(x679)
+  x681 = (str("got ") + (x680 + (str(", wanted ") + (str("18") + str("")))));
+  x682 = (x681 + str("\n"));
+  print(x682)
+  x684 = x679 == 18;
+  x685 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x684), "%s" % x685
+  x686 = accel.X437_arg.get()
+  time.sleep(0.0001)
+  x687 = str(x686)
+  x688 = (str("got ") + (x687 + (str(", wanted ") + (str("19") + str("")))));
+  x689 = (x688 + str("\n"));
+  print(x689)
+  x691 = x686 == 19;
+  x692 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x691), "%s" % x692
+  x693 = accel.X438_arg.get()
+  time.sleep(0.0001)
+  x694 = str(x693)
+  x695 = (str("got ") + (x694 + (str(", wanted ") + (str("20") + str("")))));
+  x696 = (x695 + str("\n"));
+  print(x696)
+  x698 = x693 == 20;
+  x699 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x698), "%s" % x699
+  x700 = accel.X439_arg.get()
+  time.sleep(0.0001)
+  x701 = str(x700)
+  x702 = (str("got ") + (x701 + (str(", wanted ") + (str("21") + str("")))));
+  x703 = (x702 + str("\n"));
+  print(x703)
+  x705 = x700 == 21;
+  x706 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x705), "%s" % x706
+  x707 = accel.X440_arg.get()
+  time.sleep(0.0001)
+  x708 = str(x707)
+  x709 = (str("got ") + (x708 + (str(", wanted ") + (str("22") + str("")))));
+  x710 = (x709 + str("\n"));
+  print(x710)
+  x712 = x707 == 22;
+  x713 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x712), "%s" % x713
+  x714 = accel.X441_arg.get()
+  time.sleep(0.0001)
+  x715 = str(x714)
+  x716 = (str("got ") + (x715 + (str(", wanted ") + (str("23") + str("")))));
+  x717 = (x716 + str("\n"));
+  print(x717)
+  x719 = x714 == 23;
+  x720 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x719), "%s" % x720
+  x721 = accel.X442_arg.get()
+  time.sleep(0.0001)
+  x722 = str(x721)
+  x723 = (str("got ") + (x722 + (str(", wanted ") + (str("24") + str("")))));
+  x724 = (x723 + str("\n"));
+  print(x724)
+  x726 = x721 == 24;
+  x727 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x726), "%s" % x727
+  x728 = accel.X443_arg.get()
+  time.sleep(0.0001)
+  x729 = str(x728)
+  x730 = (str("got ") + (x729 + (str(", wanted ") + (str("25") + str("")))));
+  x731 = (x730 + str("\n"));
+  print(x731)
+  x733 = x728 == 25;
+  x734 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x733), "%s" % x734
+  x735 = accel.X444_arg.get()
+  time.sleep(0.0001)
+  x736 = str(x735)
+  x737 = (str("got ") + (x736 + (str(", wanted ") + (str("26") + str("")))));
+  x738 = (x737 + str("\n"));
+  print(x738)
+  x740 = x735 == 26;
+  x741 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x740), "%s" % x741
+  x742 = accel.X445_arg.get()
+  time.sleep(0.0001)
+  x743 = str(x742)
+  x744 = (str("got ") + (x743 + (str(", wanted ") + (str("27") + str("")))));
+  x745 = (x744 + str("\n"));
+  print(x745)
+  x747 = x742 == 27;
+  x748 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x747), "%s" % x748
+  x749 = accel.X446_arg.get()
+  time.sleep(0.0001)
+  x750 = str(x749)
+  x751 = (str("got ") + (x750 + (str(", wanted ") + (str("28") + str("")))));
+  x752 = (x751 + str("\n"));
+  print(x752)
+  x754 = x749 == 28;
+  x755 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x754), "%s" % x755
+  x756 = accel.X447_arg.get()
+  time.sleep(0.0001)
+  x757 = str(x756)
+  x758 = (str("got ") + (x757 + (str(", wanted ") + (str("29") + str("")))));
+  x759 = (x758 + str("\n"));
+  print(x759)
+  x761 = x756 == 29;
+  x762 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x761), "%s" % x762
+  x763 = accel.X448_arg.get()
+  time.sleep(0.0001)
+  x764 = str(x763)
+  x765 = (str("got ") + (x764 + (str(", wanted ") + (str("30") + str("")))));
+  x766 = (x765 + str("\n"));
+  print(x766)
+  x768 = x763 == 30;
+  x769 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x768), "%s" % x769
+  x770 = accel.X449_arg.get()
+  time.sleep(0.0001)
+  x771 = str(x770)
+  x772 = (str("got ") + (x771 + (str(", wanted ") + (str("31") + str("")))));
+  x773 = (x772 + str("\n"));
+  print(x773)
+  x775 = x770 == 31;
+  x776 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:23:13: Assertion failure") + "\n=================\n"));
+  if (True): assert(x775), "%s" % x776
 
