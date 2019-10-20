@@ -49,14 +49,14 @@ class AccelUnit(pr.Device,rogue.interfaces.stream.Slave):
 ##### Instrumentation Counters
         self.add(pr.RemoteVariable(name = 'X20_cycles_arg', description = 'cycs', offset = 12, bitSize = 32, bitOffset = 0, mode = 'RO',))
         self.add(pr.RemoteVariable(name = 'X20_iters_arg', description = 'numiters', offset = 16, bitSize = 32, bitOffset = 0, mode = 'RO',))
-        self.add(pr.RemoteVariable(name = 'X96_cycles_arg', description = 'cycs', offset = 20, bitSize = 32, bitOffset = 0, mode = 'RO',))
-        self.add(pr.RemoteVariable(name = 'X96_iters_arg', description = 'numiters', offset = 24, bitSize = 32, bitOffset = 0, mode = 'RO',))
-        self.add(pr.RemoteVariable(name = 'X107_cycles_arg', description = 'cycs', offset = 28, bitSize = 32, bitOffset = 0, mode = 'RO',))
-        self.add(pr.RemoteVariable(name = 'X107_iters_arg', description = 'numiters', offset = 32, bitSize = 32, bitOffset = 0, mode = 'RO',))
-        self.add(pr.RemoteVariable(name = 'X106_cycles_arg', description = 'cycs', offset = 36, bitSize = 32, bitOffset = 0, mode = 'RO',))
-        self.add(pr.RemoteVariable(name = 'X106_iters_arg', description = 'numiters', offset = 40, bitSize = 32, bitOffset = 0, mode = 'RO',))
-        self.add(pr.RemoteVariable(name = 'X106_stalled_arg', description = 'stalled', offset = 44, bitSize = 32, bitOffset = 0, mode = 'RO',))
-        self.add(pr.RemoteVariable(name = 'X106_idle_arg', description = 'idle', offset = 48, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'X99_cycles_arg', description = 'cycs', offset = 20, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'X99_iters_arg', description = 'numiters', offset = 24, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'X113_cycles_arg', description = 'cycs', offset = 28, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'X113_iters_arg', description = 'numiters', offset = 32, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'X112_cycles_arg', description = 'cycs', offset = 36, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'X112_iters_arg', description = 'numiters', offset = 40, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'X112_stalled_arg', description = 'stalled', offset = 44, bitSize = 32, bitOffset = 0, mode = 'RO',))
+        self.add(pr.RemoteVariable(name = 'X112_idle_arg', description = 'idle', offset = 48, bitSize = 32, bitOffset = 0, mode = 'RO',))
 
 ##### Early Exits
     # Unused code for testing how to receive a frame in SW

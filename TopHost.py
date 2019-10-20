@@ -29,7 +29,7 @@ def execute(base, cliargs):
   time.sleep(0.01)
   accel.Reset.set(0)
   print("Starting TopHost.py...")
-  x77 = base.frameIn
+  x80 = base.frameIn
   done = accel.Done.get()
   ctr = 0
   accel.Enable.set(1)
@@ -41,7 +41,7 @@ def execute(base, cliargs):
   
   print("Finished executing TopHost.py for FrameStoreTest!") 
   instrumentation = open('./instrumentation.txt','w+')
-  # Need to instrument List((x20,1), (x96,2), (x107,2), (x106,3))
+  # Need to instrument List((x20,1), (x99,2), (x113,2), (x112,3))
   print('ArgIns: %d, ArgIOs: %d' % (1,2)) #( " " ,  " " ))
    # immediate parent hashmap now Map(1 -> x20), current node x20 is at depth 1
   x20_cycles = accel.X20_cycles_arg.get()
@@ -56,97 +56,97 @@ def execute(base, cliargs):
   #instrumentation.write('  x20 - %d ( %d / %d ) [%d iters/parent execution]' % (x20_avg,x20_cycles,x20_iters,x20_iters_per_parent), end='')
   print('')
   instrumentation.write('')
-   # immediate parent hashmap now Map(2 -> x96, 1 -> x20), current node x96 is at depth 2
-  x96_cycles = accel.X96_cycles_arg.get()
+   # immediate parent hashmap now Map(2 -> x99, 1 -> x20), current node x99 is at depth 2
+  x99_cycles = accel.X99_cycles_arg.get()
   time.sleep(0.0001)
-  x96_iters = accel.X96_iters_arg.get()
+  x99_iters = accel.X99_iters_arg.get()
   time.sleep(0.0001)
-  x96_iters_per_parent = x96_iters / max(1,x20_iters)
+  x99_iters_per_parent = x99_iters / max(1,x20_iters)
   time.sleep(0.0001)
-  x96_avg = x96_cycles / max(1,x96_iters)
+  x99_avg = x99_cycles / max(1,x99_iters)
   time.sleep(0.0001)
-  print('    x96 - %d ( %d / %d ) [%d iters/parent execution]' % (x96_avg,x96_cycles,x96_iters,x96_iters_per_parent), end='')
-  #instrumentation.write('    x96 - %d ( %d / %d ) [%d iters/parent execution]' % (x96_avg,x96_cycles,x96_iters,x96_iters_per_parent), end='')
+  print('    x99 - %d ( %d / %d ) [%d iters/parent execution]' % (x99_avg,x99_cycles,x99_iters,x99_iters_per_parent), end='')
+  #instrumentation.write('    x99 - %d ( %d / %d ) [%d iters/parent execution]' % (x99_avg,x99_cycles,x99_iters,x99_iters_per_parent), end='')
   print('')
   instrumentation.write('')
-   # immediate parent hashmap now Map(2 -> x107, 1 -> x20), current node x107 is at depth 2
-  x107_cycles = accel.X107_cycles_arg.get()
+   # immediate parent hashmap now Map(2 -> x113, 1 -> x20), current node x113 is at depth 2
+  x113_cycles = accel.X113_cycles_arg.get()
   time.sleep(0.0001)
-  x107_iters = accel.X107_iters_arg.get()
+  x113_iters = accel.X113_iters_arg.get()
   time.sleep(0.0001)
-  x107_iters_per_parent = x107_iters / max(1,x20_iters)
+  x113_iters_per_parent = x113_iters / max(1,x20_iters)
   time.sleep(0.0001)
-  x107_avg = x107_cycles / max(1,x107_iters)
+  x113_avg = x113_cycles / max(1,x113_iters)
   time.sleep(0.0001)
-  print('    x107 - %d ( %d / %d ) [%d iters/parent execution]' % (x107_avg,x107_cycles,x107_iters,x107_iters_per_parent), end='')
-  #instrumentation.write('    x107 - %d ( %d / %d ) [%d iters/parent execution]' % (x107_avg,x107_cycles,x107_iters,x107_iters_per_parent), end='')
+  print('    x113 - %d ( %d / %d ) [%d iters/parent execution]' % (x113_avg,x113_cycles,x113_iters,x113_iters_per_parent), end='')
+  #instrumentation.write('    x113 - %d ( %d / %d ) [%d iters/parent execution]' % (x113_avg,x113_cycles,x113_iters,x113_iters_per_parent), end='')
   print('')
   instrumentation.write('')
-   # immediate parent hashmap now Map(2 -> x107, 1 -> x20, 3 -> x106), current node x106 is at depth 3
-  x106_cycles = accel.X106_cycles_arg.get()
+   # immediate parent hashmap now Map(2 -> x113, 1 -> x20, 3 -> x112), current node x112 is at depth 3
+  x112_cycles = accel.X112_cycles_arg.get()
   time.sleep(0.0001)
-  x106_iters = accel.X106_iters_arg.get()
+  x112_iters = accel.X112_iters_arg.get()
   time.sleep(0.0001)
-  x106_iters_per_parent = x106_iters / max(1,x107_iters)
+  x112_iters_per_parent = x112_iters / max(1,x113_iters)
   time.sleep(0.0001)
-  x106_avg = x106_cycles / max(1,x106_iters)
+  x112_avg = x112_cycles / max(1,x112_iters)
   time.sleep(0.0001)
-  print('      x106 - %d ( %d / %d ) [%d iters/parent execution]' % (x106_avg,x106_cycles,x106_iters,x106_iters_per_parent), end='')
-  #instrumentation.write('      x106 - %d ( %d / %d ) [%d iters/parent execution]' % (x106_avg,x106_cycles,x106_iters,x106_iters_per_parent), end='')
-  x106_stalled = accel.X106_stalled_arg.get()
-  x106_idle = accel.X106_idle_arg.get()
-  print(' <# stalled: %d, #idle: %d>' % (x106_stalled,x106_idle), end='')
-  #instrumentation.write(' <# stalled: %d, #idle: %d>' % (x106_stalled,x106_idle), end='')
+  print('      x112 - %d ( %d / %d ) [%d iters/parent execution]' % (x112_avg,x112_cycles,x112_iters,x112_iters_per_parent), end='')
+  #instrumentation.write('      x112 - %d ( %d / %d ) [%d iters/parent execution]' % (x112_avg,x112_cycles,x112_iters,x112_iters_per_parent), end='')
+  x112_stalled = accel.X112_stalled_arg.get()
+  x112_idle = accel.X112_idle_arg.get()
+  print(' <# stalled: %d, #idle: %d>' % (x112_stalled,x112_idle), end='')
+  #instrumentation.write(' <# stalled: %d, #idle: %d>' % (x112_stalled,x112_idle), end='')
   print('')
   instrumentation.write('')
   instrumentation.close();
-  x108 = np.zeros(8, dtype='uint64')
-  x109 = base.frameOut.getFrame()
-  x110 = np.array([50462976,117835012,185207048,252579084,319951120,387323156,454695192,522067228], dtype='uint64')
-  x111 = (str("Wanted:") + str("\n"));
-  print(x111)
-  x113 = len(x110)
-  for b27 in range(0,x113,1):
-    x114 = x110[b27]
-    x115 = str(x114)
-    x116 = (x115 + str(" "));
-    print(x116)
+  x114 = np.zeros(8, dtype='uint64')
+  x115 = base.frameOut.getFrame()
+  x116 = np.array([50462976,117835012,185207048,252579084,319951120,387323156,454695192,522067228], dtype='uint64')
+  x117 = (str("Wanted:") + str("\n"));
+  print(x117)
+  x119 = len(x116)
+  for b27 in range(0,x119,1):
+    x120 = x116[b27]
+    x121 = str(x120)
+    x122 = (x121 + str(" "));
+    print(x122)
   
   print(str("\n"))
-  x120 = (str("Got:") + str("\n"));
-  print(x120)
-  x122 = len(x108)
-  for b37 in range(0,x122,1):
-    x123 = x108[b37]
-    x124 = str(x123)
-    x125 = (x124 + str(" "));
-    print(x125)
+  x126 = (str("Got:") + str("\n"));
+  print(x126)
+  x128 = len(x114)
+  for b37 in range(0,x128,1):
+    x129 = x114[b37]
+    x130 = str(x129)
+    x131 = (x130 + str(" "));
+    print(x131)
   
   print(str("\n"))
-  x132 = np.zeros(len(x108), dtype=bool)
-  for b44 in range(len(x108)):
-    x129 = x108[b44]
-    x130 = x110[b44]
-    x131 = x129 == x130;
-    x132[b44] = x131
+  x138 = np.zeros(len(x114), dtype=bool)
+  for b44 in range(len(x114)):
+    x135 = x114[b44]
+    x136 = x116[b44]
+    x137 = x135 == x136;
+    x138[b44] = x137
   
-  x134 = np.zeros(len(x132),dtype='bool')
-  for b49 in range(0,len(x132)):
-    x133 = x132[b49]
-    x134[b49] = x133
+  x140 = np.zeros(len(x138),dtype='bool')
+  for b49 in range(0,len(x138)):
+    x139 = x138[b49]
+    x140[b49] = x139
   
-  x137 = 0
-  if (len(x134) > 0): # Hack to handle reductions on things of length 0
-    x137 = x134[0]
+  x143 = 0
+  if (len(x140) > 0): # Hack to handle reductions on things of length 0
+    x143 = x140[0]
   else:
-    x137 = 0
+    x143 = 0
   
-  for b52 in range(1,len(x134)):
-    b53 = x134[b52]
-    b54 = x137;
-    x136 = b53 & b54;
-    x137 = x136;
+  for b52 in range(1,len(x140)):
+    b53 = x140[b52]
+    b54 = x143;
+    x142 = b53 & b54;
+    x143 = x142;
   
-  x138 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:43:11: Assertion failure") + "\n=================\n"));
-  if (True): assert(x137), "%s" % x138
+  x144 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:43:11: Assertion failure") + "\n=================\n"));
+  if (True): assert(x143), "%s" % x144
 
