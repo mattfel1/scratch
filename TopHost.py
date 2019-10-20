@@ -101,7 +101,7 @@ def execute(base, cliargs):
   instrumentation.write('')
   instrumentation.close();
   x108 = np.zeros(8, dtype='uint64')
-  # x109 in get x77 to x108
+  x109 = base.frameOut.getFrame()
   x110 = np.array([50462976,117835012,185207048,252579084,319951120,387323156,454695192,522067228], dtype='uint64')
   x111 = (str("Wanted:") + str("\n"));
   print(x111)
