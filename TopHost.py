@@ -29,7 +29,7 @@ def execute(base, cliargs):
   time.sleep(0.01)
   accel.Reset.set(0)
   print("Starting TopHost.py...")
-  x83 = base.frameIn
+  x83 = base.frameOut
   done = accel.Done.get()
   ctr = 0
   accel.Enable.set(1)
