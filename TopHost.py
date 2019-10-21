@@ -102,6 +102,7 @@ def execute(base, cliargs):
   instrumentation.close();
   x120 = np.zeros(8, dtype='uint64')
   x121 = base.frameOut.getFrame()
+  x120 = np.frombuffer(x121, dtype='uint64')
   x122 = np.array([50462976,117835012,185207048,252579084,319951120,387323156,454695192,522067228], dtype='uint64')
   x123 = (str("Wanted:") + str("\n"));
   print(x123)
