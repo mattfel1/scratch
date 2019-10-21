@@ -35,7 +35,7 @@ def execute(base, cliargs):
     x92 = b3;
     x93[b3] = x92
   
-  base.frameIn.sendFrame(x93)
+  base.frameIn.sendFrame(x93.astype(dtype='uint64'))
   x96 = base.frameOut
   done = accel.Done.get()
   ctr = 0
@@ -156,7 +156,7 @@ def execute(base, cliargs):
   instrumentation.close();
   x133 = np.zeros(64, dtype='uint32')
   x134 = base.frameOut.getFrame()
-  x133 = np.frombuffer(x134, dtype='uint32')
+  x133 = np.frombuffer(x134, dtype='uint64').astype(dtype='uint32')
   x137 = np.zeros(len(x93),dtype='uint32')
   for b24 in range(0,len(x93)):
     x135 = x93[b24]
