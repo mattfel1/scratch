@@ -29,14 +29,12 @@ def execute(base, cliargs):
   time.sleep(0.01)
   accel.Reset.set(0)
   print("Starting TopHost.py...")
-  x91 = base.frameIn
   x93 = np.zeros(64, dtype='uint32')
   for b3 in range(0,64):
     x92 = b3;
     x93[b3] = x92
   
-  base.frameIn.sendFrame(x93.astype(dtype='uint64'))
-  x96 = base.frameOut
+  base.x91_frame.sendFrame(x93.astype(dtype='uint64'))
   done = accel.Done.get()
   ctr = 0
   accel.Enable.set(1)
@@ -207,6 +205,6 @@ def execute(base, cliargs):
     x163 = b57 & b58;
     x164 = x163;
   
-  x165 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:80:11: Assertion failure") + "\n=================\n"));
+  x165 = ("\n=================\n" + (str("LoadStoreUnitTests.scala:72:11: Assertion failure") + "\n=================\n"));
   if (True): assert(x164), "%s" % x165
 
