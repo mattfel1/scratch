@@ -21,10 +21,7 @@ from FrameSlave import FrameSlave
 from FrameMaster import FrameMaster
 
 def connect(base):
-  base.x65_port = rogue.interfaces.stream.TcpClient('localhost', 8000 + (0+1)*2 + 0 * 512)
-  base.x66_frame = FrameMaster()
-  pyrogue.streamConnect(base.x66_frame, base.x65_port)
-  base.x70_port = rogue.interfaces.stream.TcpClient('localhost', 8000 + (1+1)*2 + 0 * 512)
-  base.x71_frame = FrameSlave()
-  pyrogue.streamConnect(base.x70_port, base.x71_frame)
-
+  base.x58_port = rogue.interfaces.stream.TcpClient('localhost', 8000 + (0+1)*2 + 0 * 512)
+  base.x59_frame = FrameMaster()
+  pyrogue.streamConnect(base.x59_frame, base.x58_port)
+  base.x63_port = rogue.interfaces.stream.TcpClient('localhost', 8000 + (1+1)*2 + 0 * 512)
