@@ -22,8 +22,8 @@ from FrameContainer import FrameContainer
 def connect(base):
   base.x90_port = rogue.interfaces.stream.TcpClient('localhost', 8000 + (0+1)*2 + 0 * 512)
   base.x91_frame = FrameContainer()
-  pyrogue.streamConnect(base.x91_frame, base.x1_port)
+  pyrogue.streamConnect(base.x91_frame, base.x90_port)
   base.x95_port = rogue.interfaces.stream.TcpClient('localhost', 8000 + (1+1)*2 + 0 * 512)
   base.x96_frame = FrameContainer()
-  pyrogue.streamConnect(base.x96_frame, base.x7_port)
+  pyrogue.streamConnect(base.x96_frame, base.x95_port)
 
