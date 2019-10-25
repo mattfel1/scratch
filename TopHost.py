@@ -153,7 +153,7 @@ def execute(base, cliargs):
   instrumentation.write('')
   instrumentation.close();
   x133 = np.zeros(64, dtype='uint32')
-  x134 = base.frameOut.getFrame()
+  x134 = base.x96_frame.getFrame()
   x133 = np.frombuffer(x134, dtype='uint64').astype(dtype='uint32')
   x137 = np.zeros(len(x93),dtype='uint32')
   for b24 in range(0,len(x93)):

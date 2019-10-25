@@ -17,7 +17,8 @@ import axipcie  as pcie
 # import rogue.axi as axi
 
 import time
-from FrameContainer import FrameContainer
+from FrameSlave import FrameSlave
+from FrameMaster import FrameMaster
 
 def connect(base):
   base.x90_port = rogue.interfaces.stream.TcpClient('localhost', 8000 + (0+1)*2 + 0 * 512)
